@@ -1,12 +1,8 @@
 <?php
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>GameStore</title>
-    <link rel="stylesheet" href="">
-</head>
-<body>
-</body>
-</html>
+session_start();
+require_once __DIR__.'/vendor/autoload.php';
+
+$path = trim($_SERVER['REQUEST_URI'], '/');
+
+$path = parse_url($path,PHP_URL_PATH);
+
