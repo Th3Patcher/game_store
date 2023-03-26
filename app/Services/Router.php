@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Services;
+
 use App\Controllers\DefaultController;
 use App\Controllers\SecurityController;
+use App\Controllers\AfterLoginController;
 
 class Router
 {
@@ -23,6 +25,7 @@ class Router
         $class_list = [
             "DefaultController" => DefaultController::class,
             "SecurityController" => SecurityController::class,
+            "AfterLoginController"=> AfterLoginController::class
         ];
 
         $action = explode('/', $url)[0];

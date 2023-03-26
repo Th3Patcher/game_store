@@ -19,22 +19,24 @@ class SecurityController extends AppController
             return $this->returnInfo($this->validation($data));
         }
 
-        if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+        if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             return $this->returnInfo(ErrorCodes::EMAIL_NOT_VALID);
         }
 
-        if((strlen($data['password']) < 5 || strlen($data['password']) > 30)){
+        if ((strlen($data['password']) < 5 || strlen($data['password']) > 30)) {
             return $this->returnInfo(ErrorCodes::PASSWORD_NOT_VALID);
         }
 
-        if($data['password'] != $data['retry_password']){
+        if ($data['password'] !== $data['retry_password']) {
             return $this->returnInfo(ErrorCodes::PASSWORD_CONFIRMATION);
         }
 
         $user_model = new User();
         $user = $user_model->createUser($data);
-        var_dump($user);
-        die();
+
+        $_SESSION['user'] = $user;
+
+        return $this->returnInfo(array('page' => 'admin_page'));
     }
 
     /**
@@ -61,7 +63,7 @@ class SecurityController extends AppController
             return true;
         } else {
 
-            $message['message'] = sprintf(ErrorCodes::REQUEST_FIELD_REQUIRED['message'],array_key_first($result));
+            $message['message'] = sprintf(ErrorCodes::REQUEST_FIELD_REQUIRED['message'], array_key_first($result));
 
         }
 

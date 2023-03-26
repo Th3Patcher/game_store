@@ -17,6 +17,7 @@ Router::get('login','DefaultController');
 Router::get('error_page','DefaultController');
 Router::get('registration','DefaultController');
 
+Router::get('admin_page','AfterLoginController');
 /**
  * POST
  */

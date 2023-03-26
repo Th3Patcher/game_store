@@ -20,6 +20,7 @@ jQuery(function ($) {
                     $('#alertMessage').after('<span class="messagesApi"> '+data.message+'</span>')
                     alert.show()
                 } else {
+                    window.location.replace('http://' + window.location.hostname + '/' + data.page)
                     //content()
                 }
             },

@@ -20,8 +20,9 @@ class User extends Models
         $stmt->bindParam('role_id',$role['id'], PDO::PARAM_STR);
 
         $stmt->execute();
-
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $s = $this->database->lastInsertId();
+        //$stmt->fetch(PDO::FETCH_ASSOC)
+        return $s;
     }
 
     public function getRoleByName(string $name)
@@ -38,5 +39,37 @@ class User extends Models
         }
 
         return $role;
+    }
+
+    public function getRoleByUserId($user_id)
+    {
+        $stmt = $this->database->prepare("SELECT role.name FROM user JOIN role ON role_id = role.id
+                                               WHERE user.id = '{$user_id}'");
+        $stmt->execute();
+
+        $role = $stmt->fetch(2);
+
+        if($role == false)
+        {
+            return null;
+        }
+
+        return $role['name'];
+    }
+
+    public function getUserById($user_id)
+    {
+        $stmt = $this->database->prepare("SELECT * FROM user WHERE id = '{$user_id}'");
+
+        $stmt->execute();
+
+        $user = $stmt->fetch(2);
+
+        if($user == false)
+        {
+            return null;
+        }
+
+        return $user;
     }
 }

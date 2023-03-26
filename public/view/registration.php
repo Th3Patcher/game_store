@@ -3,7 +3,6 @@
 
 <?php
 require_once __DIR__ . '/../layout/header.php';
-phpinfo();
 ?>
 
 <body class="d-flex flex-column">
