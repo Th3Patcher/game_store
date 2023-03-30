@@ -1,8 +1,13 @@
 <!doctype html>
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="../css/info.css">
+
 <?php
-require_once __DIR__ . '/../layout/header.php';
+if (!array_key_exists('user', $_SESSION)) {
+    require_once __DIR__ . '/../layout/header.php';
+} else {
+    require_once __DIR__ . '/../layout/login_layout/header_in.php';
+}
 ?>
 
 <body class="d-flex flex-column">

@@ -2,9 +2,11 @@
 
 namespace App\Services;
 
+use App\Controllers\ProductController;
 use App\Controllers\DefaultController;
 use App\Controllers\SecurityController;
 use App\Controllers\AfterLoginController;
+use App\Controllers\BasketController;
 
 class Router
 {
@@ -23,9 +25,11 @@ class Router
     public static function run($url)
     {
         $class_list = [
+            "ProductController" => ProductController::class,
             "DefaultController" => DefaultController::class,
             "SecurityController" => SecurityController::class,
-            "AfterLoginController"=> AfterLoginController::class
+            "AfterLoginController"=> AfterLoginController::class,
+            "BasketController" => BasketController::class
         ];
 
         $action = explode('/', $url)[0];

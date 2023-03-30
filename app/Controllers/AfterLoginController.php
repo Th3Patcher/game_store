@@ -12,7 +12,7 @@ class AfterLoginController extends AppController
         $url = "http://$_SERVER[HTTP_HOST]";
         if (array_key_exists('user', $_SESSION)) {
             if ($user_model->getRoleByUserId($_SESSION['user']) != 'admin') {
-                header("Location: {$url}/registration");
+                header("Location: {$url}/error_page");
             }
         } else {
             header("Location: {$url}/");
@@ -21,7 +21,26 @@ class AfterLoginController extends AppController
 
     public function admin_page()
     {
-      //  $this->checkRoleLocation();
-        $this->render('admin_page');
+        $this->checkRoleLocation();
+        $this->render('admin/admin_page');
     }
+
+    public function login()
+    {
+        $this->checkRoleLocation();
+        $this->render('main');
+    }
+
+    public function registration()
+    {
+        $this->checkRoleLocation();
+        $this->render('main');
+    }
+
+    public function product_in()
+    {
+        $this->checkRoleLocation();
+        $this->render('login_user/product_in');
+    }
+
 }

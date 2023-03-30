@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+/*GLOBAL*/
+
+/*WELCOME*/
+
+.center h1 {
+    font-size: 50px;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center h1:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #2a3d66;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.center h1:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.center h1:hover {
+    color: #5d54a4;
+}
+
+/*FOOTER*/
+footer {
+    background-color: #2a3d66;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    float: left;
+}
+
+/*NAVBAR*/
+
+.nav_margin {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navigation {
+    background-color: #2a3d66;
+
+    padding: 15px;
+}
+
+.navigation ul {
+    display: flex;
+    align-items: center;
+}
+
+.navigation li {
+    display: inline;
+    margin: 0px 20px;
+}
+
+.logo a {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.another_li a {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/*CONTAINER*/
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+.content {
+    min-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 80px;
+
+}
+html,
+body{
+    height: 100%;
+}
+.wrapper{
+    display: flex;
+}
+.sidebar {
+    width: 25%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+/*ALERTS*/
+
+.error-container {
+    color: #2a3d66;
+    background-color: #d789d7;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.alert {
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/*COMPANY INFO*/
+
+.company-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.company-info-label {
+    font-weight: bold;
+    display: inline-block;
+    width: 80px;
+}
+
+.company-info-value {
+    display: inline-block;
+    width: calc(100% - 80px);
+}
+
+/*CONTACT US*/
+
+.column {
+    flex: 1;
+    padding: 20px;
+}
+
+.column h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px;
+}
+
+.left {
+    margin-right: 10px;
+}
+
+.right {
+    margin-left: 10px;
+}
+
+.contact_us_main {
+    display: flex;
+}
+
+.contact_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact_us input[type="text"],
+.contact_us input[type="email"],
+.contact_us input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #9d65c9;
+    background-color: #f2f2f2;
+    font-size: 16px;
+}
+
+.contact_us input[type="text"]:focus,
+.contact_us input[type="email"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #5d54a4;
+}
+
+.contact_us input[type="submit"] {
+    background-color: #2a3d66;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact_us input[type="submit"]:hover {
+    background-color: #5d54a4;
+}
+
+.contact_us textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+/*CATEGORY*/
+
+.sidebar {
+    background-color: #f5f5f5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+.searchBox-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-container .searchBox {
+    margin-right: 10px;
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #d789d7;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0px 0px 20px -18px;
+}
+
+.search-container .btn {
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: solid #d789d7;
+    outline: none;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0px 0px 20px -18px;
+    background-color: #d789d7;
+    color: white;
+}
+
+.search-container input:hover {
+    border: 2px solid #d789d7;
+    box-shadow: 0px 0px 20px -17px;
+}
+
+.search-container input:active {
+    transform: scale(0.95);
+}
+
+.search-container .searchBox:focus {
+    border: 2px solid #5d54a4;
+}
+
+.search-container .btn:focus {
+    background: #5d54a4;
+    border: solid #5d54a4;
+    color: white;
+}
+
+.category-search-container {
+    margin: 20px;
+}
+
+.category-container {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.category-container li {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.category-container li a {
+    color: #2a3d66;
+    text-decoration: none;
+}
+
+.category-container li a:hover {
+    color: #d789d7;
+    transition: color 0.3s ease-out;
+}
+
+.tag-container {
+    list-style: none;
+    margin: 20px;
+    padding: 0;
+}
+
+.tag-container li {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.tag-container li a {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 12px;
+    background-color: #d789d7;
+    color: white;
+    text-decoration: none;
+}
+
+.tag-container li a:hover {
+    background-color: #5d54a4;
+    transition: background-color 0.3s ease-out;
+}
+
+.my-button {
+    background-color: #d789d7;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* Add a hover effect */
+.my-button:hover {
+    background-color: #9d65c9;
+}
+
+/*PRODUCT READ MORE*/
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2a3d66;
+    transition: all 0.3s cubic-bezier(0.56, 1.36, 0.54, 1.82);
+}
+.product-info .product-title {
+    font-size: 42px;
+}
+
+.product-info .product-description {
+    font-size: 28px;
+    margin: 10px 40px;
+}
+
+.product-tags-in-readmore {
+    display: inline-block;
+    color: #b37bff;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.button-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.product-price-button{
+    color: #d789d7;
+    font-weight: bold;
+    font-size: 34px;
+    margin: auto 20px;
+}
+
+.product-buy-button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    align-items: center;
+    font-size: 34px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background-color: #5d54a4;
+}
+
+.product-buy-button {
+    background-color: #5d54a4;
+}
+
+.product-buy-button:hover {
+    background-color: #fff;
+    color: #2a3d66;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.product-name{
+    align-content: center;
+}
+
+/*GAMES-CARD*/
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.product-price {
+    color: #d789d7;
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto 0 10px 0;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2a3d66;
+    transition: all 0.3s cubic-bezier(0.56, 1.36, 0.54, 1.82);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition-delay: 0.1s;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.product-tags{
+    display: inline-block;
+    color: #b37bff;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.product-tags:hover {
+    color: #7c2db3;
+}
+
+.product-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.buy-button,
+.read-more-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.buy-button {
+    background-color: #5d54a4;
+}
+
+.read-more-button {
+    background-color: #d789d7;
+}
+
+.buy-button:hover,
+.read-more-button:hover {
+    background-color: #fff;
+    color: #2a3d66;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/*check box*/
+
+/* Customize the label (the container) */
+.check_container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.check_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check_container input:checked ~ .checkmark {
+    background-color: #5d54a4;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.check_container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.check_container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* BASKET */
+
+.product-list-basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+.product-item-basket {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2a3d66;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px;
+    justify-content: space-around;
+    box-shadow: -2px -2px 41px -6px rgba(0,0,0,0.57);
+}
+
+.product-title-basket {
+    color: #fff;
+    width: 260px;
+    text-align: center;
+    font-size: 34px;
+}
+
+.product-price-basket {
+    color: #d789d7;
+    font-size: 24px;
+}
+
+.product-item-basket img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 20px ;
+}
+
+.delete-button {
+    background-color: #d789d7;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+    background-color: #c76ec6;
+}
+

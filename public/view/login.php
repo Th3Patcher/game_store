@@ -21,6 +21,11 @@ require_once __DIR__ . '/../layout/header.php';
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-10 col-xl-7 mx-auto">
+                                <div class="col-12">
+                                    <div class="alert alert-danger" id="alertErrorInformation" style="display:none;">
+                                        <strong id="alertMessage">Information! </strong>
+                                    </div>
+                                </div>
                                 <h3 class="display-4">Login in site!</h3>
                                 <p class="text-muted mb-4">If you have a registered account or go to the registration page to create one</p>
                                 <form method="POST" onsubmit="return false" name="login_form" id="login_form">

@@ -11,7 +11,17 @@ class DefaultController extends AppController
 
     public function info()
     {
+        $this->render('error_page');
+    }
+
+    public function main()
+    {
         $this->render('main');
+    }
+
+    public function product()
+    {
+        $this->render('product');
     }
 
     public function login()
@@ -27,5 +37,10 @@ class DefaultController extends AppController
     public function error_page()
     {
         $this->render('error_page');
+    }
+
+    public function logout()
+    {
+        $this->render('main');
     }
 }
