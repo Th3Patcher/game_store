@@ -1,0 +1,11 @@
+#getCategories {
+    margin-top: 20px;
+}
+#getCategories .category-item {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+#getCategories .category-item label {
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
